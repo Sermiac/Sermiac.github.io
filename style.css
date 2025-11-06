@@ -1,1 +1,52 @@
+/* Background setup */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  background: black;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
+.overlay {
+  background: url('https://imgs.search.brave.com/hbhcd87010VRo0n2ZKhoyCiw-2y28uOFe3fJQomZ_x0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjE4/MjE2MTgyNS9waG90/by9ibHVlLWFuZC15/ZWxsb3ctcHl0aG9u/LXByb2dyYW1taW5n/LWNvZGUtb24tYS1k/YXJrLWVuZ2luZWVy/aW5nLWJsdWVwcmlu/dC1ncmlkLXN1cmZh/Y2Uud2VicD9hPTEm/Yj0xJnM9NjEyeDYx/MiZ3PTAmaz0yMCZj/PUJ6S3UyZHdVRWs4/a1RpVFFWaWR5eV9a/RkNqYVZKbkdjR2dJ/ejg2cTFjSFU9') center/cover no-repeat;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Header */
+header {
+  padding: 4rem 1rem 2rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Projects Section */
+main {
+  padding: 2rem 1rem 4rem;
+}
+
+main h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.projects {
+  display: fl
