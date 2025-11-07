@@ -1,18 +1,19 @@
-/* Background setup */
 body {
+  background-color: #0f0f0f;
+  color: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  font-family: Arial, sans-serif;
-  color: white;
-  text-align: center;
-  background: black;
-  position: relative;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 .overlay {
   background: url('https://imgs.search.brave.com/hbhcd87010VRo0n2ZKhoyCiw-2y28uOFe3fJQomZ_x0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjE4/MjE2MTgyNS9waG90/by9ibHVlLWFuZC15/ZWxsb3ctcHl0aG9u/LXByb2dyYW1taW5n/LWNvZGUtb24tYS1k/YXJrLWVuZ2luZWVy/aW5nLWJsdWVwcmlu/dC1ncmlkLXN1cmZh/Y2Uud2VicD9hPTEm/Yj0xJnM9NjEyeDYx/MiZ3PTAmaz0yMCZj/PUJ6S3UyZHdVRWs4/a1RpVFFWaWR5eV9a/RkNqYVZKbkdjR2dJ/ejg2cTFjSFU9') center/cover no-repeat;
-  opacity: 0.5;
+  opacity: 0.1;
   position: fixed;
   top: 0;
   left: 0;
@@ -21,32 +22,87 @@ body {
   z-index: -1;
 }
 
-/* Header */
-header {
-  padding: 4rem 1rem 2rem;
+
+.container {
+  text-align: center;
+  max-width: 700px;
+  padding: 20px;
 }
 
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .description {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin-bottom: 30px;
 }
 
-/* Projects Section */
-main {
-  padding: 2rem 1rem 4rem;
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-main h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+.toggle-btn {
+  background-color: #1e1e1e;
+  border: 1px solid #555;
+  color: #f5f5f5;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-.projects {
-  display: fl
+.toggle-btn:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+/* Animaciones */
+.project {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+
+.project img {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* Estado visible con fade-in */
+.project.visible {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Estado saliente con fade-out */
+.project.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project-link:hover .project {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}

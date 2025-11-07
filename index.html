@@ -1,36 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Miguel Serna</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="overlay"></div>
-  <header>
-    <h1>Miguel Serna</h1>
+  <div class="container">
+    <h1 class="title">Miguel Serna</h1>
     <p class="description">
 Software developer passionate about automation, data-driven tools, and interactive experiences.
-Experience using Python to developing bots that integrates asynchronous programming (async / await), database management (initially with Excel files, now migrating to SQL), and external APIs such as Google Sheets for data handling and automation.
+<br><br>Experience developing bots using Python, user interfaces and games using Godot, database management (initially with Excel files, now migrating to SQL), and external APIs.
     </p>
-  </header>
+    <div class="buttons">
+      <button id="bot-btn" class="toggle-btn">Telegram Bot Project</button>
+      <button id="game-btn" class="toggle-btn">Game Project</button>
+    </div>
 
-  <main>
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <img src="https://via.placeholder.com/400x200" alt="Telegram Bot">
-        <h3>Telegram Bot</h3>
+    <a href="https://github.com/Sermiac/Telegram_bot" target="_blank" class="project-link">
+      <div id="bot-project" class="project">
+        <img src="assets/bot.gif" alt="Proyecto Videojuego">
         <p>A Telegram bot that lists products, gives prices, and calculates totals while notifying a specific group based on an ID. It stores the running total to add new orders incrementally.</p>
       </div>
+    </a>
 
-      <div class="card">
-        <img src="https://via.placeholder.com/400x200" alt="Godot Game">
-        <h3>Godot Game</h3>
-        <p>2D side-scrolling narrative game built with a focus on story delivery through animation and transitions. The project implements a modular text system that reads dialogue and story content from external .txt files.</p>
+    <a href="https://github.com/Sermiac/Choices-We-Make" target="_blank" class="project-link">
+      <div id="game-project" class="project">
+        <img src="assets/game.gif" alt="Proyecto Videojuego">
+        <p>2D side-scrolling narrative game built with a focus on story delivery through animation and transitions. The project implements a modular text system that reads dialogue and story content from external text files.</p>
       </div>
-    </div>
-  </main>
+    </a>
+  </div>
+
+  <script>
+    const botBtn = document.getElementById('bot-btn');
+    const gameBtn = document.getElementById('game-btn');
+    const botProject = document.getElementById('bot-project');
+    const gameProject = document.getElementById('game-project');
+
+    function showProject(projectToShow, projectToHide) {
+      projectToHide.classList.remove('visible');
+      projectToHide.classList.add('hidden');
+
+      // Espera a que termine la animación antes de mostrar el otro
+      setTimeout(() => {
+        projectToHide.style.display = 'none';
+        projectToShow.style.display = 'block';
+        projectToShow.classList.remove('hidden');
+        projectToShow.classList.add('visible');
+      }, 300);
+    }
+
+    botBtn.addEventListener('click', () => showProject(botProject, gameProject));
+    gameBtn.addEventListener('click', () => showProject(gameProject, botProject));
+  </script>
 </body>
 </html>
