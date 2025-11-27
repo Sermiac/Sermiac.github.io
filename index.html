@@ -1,60 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miguel Serna</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="overlay"></div>
-  <div class="container">
-    <h1 class="title">Miguel Serna</h1>
-    <p class="description">
-Software developer passionate about automation, data-driven tools, and interactive experiences.
-<br><br>Experience developing bots using Python, user interfaces and games using Godot, database management (initially with Excel files, now migrating to SQL), and external APIs.
-    </p>
-    <div class="buttons">
-      <button id="bot-btn" class="toggle-btn">Telegram Bot Project</button>
-      <button id="game-btn" class="toggle-btn">Game Project</button>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miguel Serna</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <nav class="navbar">
+      <div class="navbar-text">
+        <button class="navbar-button" onclick="scrollToSection(`#home`)">
+          <h3>Home</h3>
+        </button>
+      </div>
+      <div class="navbar-text">
+        <button class="navbar-button" onclick="scrollToSection(`#projects`)">
+          <h3 class="navbar-sections">Projects</h3>
+        </button>
+        <button class="navbar-button" onclick="scrollToSection(`#about-me`)">
+          <h3 class="navbar-sections">About me</h3>
+        </button>
+        <button class="navbar-button" onclick="scrollToSection(`#contact-me`)">
+          <h3 class="navbar-sections">Contact</h3>
+        </button>
+      </div>
+    </nav>
+    <div class="container">
+      <div id="home" class="section alt">
+        <h1 class="title">Hello!</h1>
+        <p class="description">
+          I'm Miguel Serna and here you can check the projects I have worked on.
+        </p>
+
+        <img src="assets/data.png" alt="image" />
+      </div>
+      <div id="projects" class="section">
+        <h2 class="title">Projects</h2>
+
+        <div class="buttons">
+          <button id="website-btn" class="toggle-btn">React Website</button>
+          <button id="bot-btn" class="toggle-btn">Telegram Bot</button>
+          <button id="game-btn" class="toggle-btn">Game</button>
+        </div>
+
+        <a
+          href="https://music-app-miguel.netlify.app/"
+          target="_blank"
+          class="project-link"
+        >
+          <div id="website-project" class="project">
+            <video
+              class="video"
+              src="assets/website.mp4"
+              autoplay
+              muted
+              loop
+            ></video>
+            <p class="project-description">
+              A Website developed using react that connects to Spotify API to
+              return recent albums and searches for tracks. Also, it has the
+              functionality to save favorites.
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="https://github.com/Sermiac/Telegram_bot"
+          target="_blank"
+          class="project-link"
+        >
+          <div id="bot-project" class="project">
+            <video
+              class="video"
+              src="assets/bot.mp4"
+              autoplay
+              muted
+              loop
+            ></video>
+            <p class="description">
+              A Telegram bot that lists products, provides prices, and processes
+              orders while sending notifications to a specific group ID. It uses
+              a Google Sheets database to track totals and subtotals.
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="https://github.com/Sermiac/Choices-We-Make"
+          target="_blank"
+          class="project-link"
+        >
+          <div id="game-project" class="project">
+            <video
+              class="video"
+              src="assets/game.mp4"
+              autoplay
+              muted
+              loop
+            ></video>
+            <p class="description">
+              2D side-scrolling narrative game with a modular system for
+              configuring storylines, scenes, objects, and transitions via text
+              files. Focused on streamlined story delivery and flexible content
+              design.
+            </p>
+          </div>
+        </a>
+      </div>
+      <div id="about-me" class="section alt">
+        <h2 class="title">About me</h2>
+        <p class="description">
+          Software developer passionate about automation, data-driven tools, and
+          interactive experiences.
+          <br /><br />
+          I have experience building bots with Python, developing user
+          interfaces and games with Godot, managing databases (initially with
+          Google Sheets, now migrating to SQL), and working with external APIs.
+          <br /><br />
+          I have also built complete web applications using React and can
+          integrate backend and frontend securely, connecting them to APIs and
+          structuring data flows that keep the system reliable and maintainable.
+        </p>
+      </div>
+      <div id="contact-me" class="section">
+        <h2 class="title">Contact info</h2>
+        <p class="description">Email: miguelo320484@gmail.com</p>
+        <p class="description">Social media:</p>
+        <div class="buttons">
+          <a
+            href="https://linkedin.com/in/miguel-serna-acevedo-18a68b280"
+            target="_blank"
+            class="project-link"
+          >
+            <div class="contact-container alt">
+              <img
+                src="https://imgs.search.brave.com/XATwlzvAygQOLcfSoq_DYROZoWQ9EqKT78TuJNdqAvY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjMv/OTg2LzU2OC9zbWFs/bC9saW5rZWRpbi1s/b2dvLWxpbmtlZGlu/LWxvZ28tdHJhbnNw/YXJlbnQtbGlua2Vk/aW4taWNvbi10cmFu/c3BhcmVudC1mcmVl/LWZyZWUtcG5nLnBu/Zw"
+                alt="Linkedin"
+              />
+            </div>
+          </a>
+          <a
+            href="https://github.com/Sermiac"
+            target="_blank"
+            class="project-link"
+          >
+            <div class="contact-container alt">
+              <img
+                src="https://imgs.search.brave.com/np-NaC0N3gBsHZTYs6VaesbSU5ZQTfcZ-SAea-uqIb4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL2ltYWdlcy81/ODQ3Zjk4ZmNlZjEw/MTRjMGI1ZTQ4YzAu/cG5n"
+                alt="Github"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+      <p class="description licence">
+        © 2025 Miguel Angel Serna Acevedo. All Rights Reserved.
+      </p>
+      <a
+        class="description licence"
+        href="https://www.flaticon.com/free-icons/data-integration"
+        title="data integration icons"
+        >Data integration icons created by SamberTheLabs - Flaticon</a
+      >
     </div>
-
-    <a href="https://github.com/Sermiac/Telegram_bot" target="_blank" class="project-link">
-      <div id="bot-project" class="project">
-        <img src="assets/bot.gif" alt="Proyecto Videojuego">
-        <p>A Telegram bot that lists products, provides prices, and processes orders while sending notifications to a specific group ID. It uses a Google Sheets database to track totals and subtotals.</p>
-      </div>
-    </a>
-
-    <a href="https://github.com/Sermiac/Choices-We-Make" target="_blank" class="project-link">
-      <div id="game-project" class="project">
-        <img src="assets/game.gif" alt="Proyecto Videojuego">
-        <p>2D side-scrolling narrative game with a modular system for configuring storylines, scenes, objects, and transitions via text files. Focused on streamlined story delivery and flexible content design.</p>
-      </div>
-    </a>
-  </div>
-
-  <script>
-    const botBtn = document.getElementById('bot-btn');
-    const gameBtn = document.getElementById('game-btn');
-    const botProject = document.getElementById('bot-project');
-    const gameProject = document.getElementById('game-project');
-
-    function showProject(projectToShow, projectToHide) {
-      projectToHide.classList.remove('visible');
-      projectToHide.classList.add('hidden');
-
-      // Espera a que termine la animación antes de mostrar el otro
-      setTimeout(() => {
-        projectToHide.style.display = 'none';
-        projectToShow.style.display = 'block';
-        projectToShow.classList.remove('hidden');
-        projectToShow.classList.add('visible');
-      }, 300);
-    }
-
-    botBtn.addEventListener('click', () => showProject(botProject, gameProject));
-    gameBtn.addEventListener('click', () => showProject(gameProject, botProject));
-  </script>
-</body>
+  </body>
+  <script src="main.js"></script>
 </html>

@@ -1,19 +1,13 @@
 body {
+  margin: 0;
   background-color: #0f0f0f;
   color: #f5f5f5;
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 80px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
   overflow-x: hidden;
 }
 
 .overlay {
-  background: url('https://imgs.search.brave.com/hbhcd87010VRo0n2ZKhoyCiw-2y28uOFe3fJQomZ_x0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjE4/MjE2MTgyNS9waG90/by9ibHVlLWFuZC15/ZWxsb3ctcHl0aG9u/LXByb2dyYW1taW5n/LWNvZGUtb24tYS1k/YXJrLWVuZ2luZWVy/aW5nLWJsdWVwcmlu/dC1ncmlkLXN1cmZh/Y2Uud2VicD9hPTEm/Yj0xJnM9NjEyeDYx/MiZ3PTAmaz0yMCZj/PUJ6S3UyZHdVRWs4/a1RpVFFWaWR5eV9a/RkNqYVZKbkdjR2dJ/ejg2cTFjSFU9') center/cover no-repeat;
-  opacity: 0.1;
+  opacity: 0.05;
   position: fixed;
   top: 0;
   left: 0;
@@ -22,22 +16,82 @@ body {
   z-index: -1;
 }
 
+.navbar {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  background-color: #1a1a1a;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.navbar-button {
+  box-shadow: 0;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border: 0;
+  color: #f5f5f5;
+  cursor: pointer;
+}
+
+.navbar-button:hover {
+  transform: scale(1.05);
+}
+
+.navbar-text {
+  margin-inline: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-sections {
+  font-size: 100%;
+  margin-inline: 0.5rem;
+}
 
 .container {
-  text-align: center;
-  max-width: 700px;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 80px 0;
 }
 
 .title {
+  text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .description {
+  margin-inline: 1rem;
+  max-width: 600px;
   font-size: 1.1rem;
   color: #cccccc;
-  margin-bottom: 30px;
+}
+
+.project-description {
+  margin-inline: 1.5rem;
+  font-size: 1rem;
+  max-width: 500px;
+}
+
+.section {
+  left: 0;
+  width: 100%;
+  min-height: 400px;
+  background-color: #333;
+
+  text-align: justify-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section.alt {
+  background-color: #0f0f0f;
 }
 
 .buttons {
@@ -54,7 +108,9 @@ body {
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.3s ease;
 }
 
 .toggle-btn:hover {
@@ -62,35 +118,29 @@ body {
   transform: scale(1.05);
 }
 
-/* Animaciones */
 .project {
   opacity: 0;
   transform: scale(0.98);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   padding: 20px;
+  margin-inline: 10px;
   margin-top: 20px;
+  margin-bottom: 20px;
+
+  max-width: 400px;
 }
 
-
-.project img {
-  width: 100%;
-  max-width: 1200px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-
-/* Estado visible con fade-in */
 .project.visible {
   display: block;
   opacity: 1;
   transform: scale(1);
 }
 
-/* Estado saliente con fade-out */
 .project.hidden {
   opacity: 0;
   transform: scale(0.95);
@@ -105,4 +155,54 @@ body {
 .project-link:hover .project {
   transform: scale(1.02);
   transition: transform 0.3s ease;
+}
+
+.video {
+  min-width: 400px;
+  max-width: 100%;
+  height: auto;
+
+  width: clamp(400px, 50%, 600px);
+}
+
+.contact-container {
+  transform: scale(0.98);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  padding: 20px;
+  margin-inline: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.contact-container.alt {
+  background-color: #ffffff;
+}
+
+.contact-container:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.contact-container:hover .alt {
+  transform: none;
+  transition: none;
+}
+
+.description.licence {
+  margin-inline: 0;
+  text-align: center;
+}
+
+img {
+  max-width: 200px;
+}
+
+.foto {
+  padding: 5px;
+  border-radius: 50px;
+  max-width: 50px;
 }
