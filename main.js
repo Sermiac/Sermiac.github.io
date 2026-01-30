@@ -1,12 +1,14 @@
 const botBtn = document.getElementById("bot-btn");
 const gameBtn = document.getElementById("game-btn");
 const websiteBtn = document.getElementById("website-btn");
+const ECommerceBtn = document.getElementById("e-commerce-btn");
 
 const botProject = document.getElementById("bot-project");
 const gameProject = document.getElementById("game-project");
 const websiteProject = document.getElementById("website-project");
+const ECommerceProject = document.getElementById("e-commerce-project");
 
-const projects = { botProject, gameProject, websiteProject };
+const projects = { botProject, gameProject, websiteProject, ECommerceProject };
 
 function showProject(project) {
   const visible = document.querySelectorAll(".visible");
@@ -36,6 +38,7 @@ function showProject(project) {
 botBtn.addEventListener("click", () => showProject(botProject));
 gameBtn.addEventListener("click", () => showProject(gameProject));
 websiteBtn.addEventListener("click", () => showProject(websiteProject));
+ECommerceBtn.addEventListener("click", () => showProject(ECommerceProject));
 
 function scrollToSection(section) {
   const target = document.querySelector(section);
