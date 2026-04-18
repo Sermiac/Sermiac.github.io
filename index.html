@@ -5,7 +5,7 @@
     <link rel="icon" type="image/png" href="./assets/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Miguel Serna</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="overlay"></div>
@@ -16,15 +16,13 @@
         </button>
       </div>
       <div class="navbar-text">
-        <button class="navbar-button" onclick="scrollToSection(`#projects`)">
-          <h3 class="navbar-sections">Projects</h3>
-        </button>
-        <button class="navbar-button" onclick="scrollToSection(`#about-me`)">
-          <h3 class="navbar-sections">About me</h3>
-        </button>
-        <button class="navbar-button" onclick="scrollToSection(`#contact-me`)">
-          <h3 class="navbar-sections">Contact</h3>
-        </button>
+        <a
+          href="pages/portfolio.html"
+          class="navbar-button"
+          style="text-decoration: none"
+        >
+          <h3 class="navbar-sections">Portfolio</h3>
+        </a>
       </div>
     </nav>
     <div class="container">
@@ -35,78 +33,6 @@
         </p>
 
         <img src="assets/data.png" alt="image" />
-      </div>
-      <div id="projects" class="section">
-        <h2 class="title">Projects</h2>
-
-        <div class="buttons">
-          <button id="e-commerce-btn" class="toggle-btn">
-            E-commerce Website
-          </button>
-          <button id="website-btn" class="toggle-btn">React Website</button>
-
-          <button id="bot-btn" class="toggle-btn">Telegram Bot</button>
-        </div>
-
-        <a href="https://sermiac.com.co" target="_blank" class="project-link">
-          <div id="e-commerce-project" class="project">
-            <video
-              class="video"
-              src="assets/e-commerce.mp4"
-              autoplay
-              muted
-              loop
-            ></video>
-            <p class="description">
-              Web application with product catalog management, dynamic product
-              pages, shopping cart functionality, and user authentication. Built
-              database-driven logic for cart persistence, user sessions, and
-              order flow.
-            </p>
-          </div>
-        </a>
-
-        <a
-          href="https://music-app-miguel.netlify.app/"
-          target="_blank"
-          class="project-link"
-        >
-          <div id="website-project" class="project">
-            <video
-              class="video"
-              src="assets/website.mp4"
-              autoplay
-              muted
-              loop
-            ></video>
-            <p class="description">
-              A Website developed using react that connects to Spotify API to
-              return recent albums and searches for tracks. Also, it has the
-              functionality to save favorites.
-            </p>
-          </div>
-        </a>
-
-        <a
-          href="https://github.com/Sermiac/Telegram_bot"
-          target="_blank"
-          class="project-link"
-        >
-          <div id="bot-project" class="project">
-            <video
-              class="video"
-              src="assets/bot.mp4"
-              autoplay
-              muted
-              loop
-            ></video>
-            <p class="description">
-              A Telegram bot that lists products, provides prices, and processes
-              orders while sending notifications to a specific group ID. It uses
-              a Google Sheets database to track totals and subtotals.
-            </p>
-          </div>
-        </a>
       </div>
       <div id="about-me" class="section alt">
         <h2 class="title">About me</h2>
@@ -125,47 +51,75 @@
       </div>
       <div id="contact-me" class="section">
         <h2 class="title">Contact info</h2>
-        <p class="description">Email: miguelo320484@gmail.com</p>
-        <p class="description">Social media:</p>
-        <div class="buttons">
-          <a
-            href="https://linkedin.com/in/miguel-serna-acevedo-18a68b280"
-            target="_blank"
-            class="project-link"
-          >
-            <div class="contact-container alt">
-              <img
-                src="https://imgs.search.brave.com/XATwlzvAygQOLcfSoq_DYROZoWQ9EqKT78TuJNdqAvY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjMv/OTg2LzU2OC9zbWFs/bC9saW5rZWRpbi1s/b2dvLWxpbmtlZGlu/LWxvZ28tdHJhbnNw/YXJlbnQtbGlua2Vk/aW4taWNvbi10cmFu/c3BhcmVudC1mcmVl/LWZyZWUtcG5nLnBu/Zw"
-                alt="Linkedin"
-              />
+        <div class="contact-section-container">
+          <div class="bg-animation"></div>
+
+          <div class="contact-columns">
+            <div class="contact-column-item">
+              <span class="contact-label">Email</span>
+              <a href="mailto:miguelo320484@gmail.com" class="contact-value">
+                <img
+                  src="https://cdn.simpleicons.org/gmail/white"
+                  width="20"
+                  alt=""
+                />
+                <span>miguelo320484@gmail.com</span>
+              </a>
             </div>
-          </a>
-          <a
-            href="https://github.com/Sermiac"
-            target="_blank"
-            class="project-link"
-          >
-            <div class="contact-container alt">
-              <img
-                src="https://imgs.search.brave.com/np-NaC0N3gBsHZTYs6VaesbSU5ZQTfcZ-SAea-uqIb4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL2ltYWdlcy81/ODQ3Zjk4ZmNlZjEw/MTRjMGI1ZTQ4YzAu/cG5n"
-                alt="Github"
-              />
+
+            <div class="contact-column-item">
+              <span class="contact-label">Github</span>
+              <a
+                href="https://github.com/Sermiac"
+                target="_blank"
+                class="contact-value"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/github/white"
+                  width="20"
+                  alt=""
+                />
+                <span>Sermiac</span>
+              </a>
             </div>
-          </a>
+
+            <div class="contact-column-item">
+              <span class="contact-label">LinkedIn</span>
+              <a
+                href="https://linkedin.com/in/miguel-serna-acevedo-18a68b280"
+                target="_blank"
+                class="contact-value"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
+                  width="20"
+                  alt="LinkedIn"
+                />
+                <span>Miguel Serna</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-brand">
+            <span class="brand-name">SERMIAC.github.io</span>
+          </div>
         </div>
       </div>
-      <p class="description licence">
-        © 2025 Miguel Angel Serna Acevedo. All Rights Reserved.
-      </p>
-      <a
-        href="https://www.flaticon.com/free-icons/data-integration"
-        title="data integration icons"
-      >
+      <footer>
         <p class="description licence">
-          Data integration icons created by SamberTheLabs - Flaticon
-        </p></a
-      >
+          © 2025 Miguel Angel Serna Acevedo. All Rights Reserved.
+        </p>
+        <a
+          href="https://www.flaticon.com/free-icons/data-integration"
+          title="data integration icons"
+          style="text-decoration: none"
+        >
+          <p class="description licence">
+            Data integration icons created by SamberTheLabs - Flaticon
+          </p></a
+        >
+      </footer>
     </div>
   </body>
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
 </html>
